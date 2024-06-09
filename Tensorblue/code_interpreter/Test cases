@@ -1,0 +1,15 @@
+def test_pdf_summary():
+    result = handle_file_upload('test_files/sample.pdf', 'pdf', 'Summarize the content of this PDF.')
+    assert 'summary' in result.lower()
+
+def test_xlsx_data():
+    result = handle_file_upload('test_files/sample.xlsx', 'xlsx', 'Show the first 5 rows of this spreadsheet.')
+    assert 'row' in result.lower()
+
+def test_csv_data():
+    result = handle_file_upload('test_files/sample.csv', 'csv', 'Describe the data in this CSV file.')
+    assert 'describe' in result.lower()
+
+def test_docx_summary():
+    result = handle_file_upload('test_files/sample.docx', 'docx', 'Summarize the content of this DOCX document.')
+    assert 'summary' in result.lower()
